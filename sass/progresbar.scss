@@ -1,0 +1,38 @@
+.progress-container {
+    margin: 3% 3%;
+    width: 90%;
+    height: 1.5em;
+    position: relative;
+    background-color: #ecfee8;
+
+
+    .progressbar {
+        background-color: #6ea4bf;
+        height: 100%;
+        width: 2%;
+        position: absolute;
+        line-height: inherit;
+        transition: width 2s linear;
+        -webkit-transition: width 2s linear;
+        -moz-transition: width 2s linear;
+        -ms-transition: width 2s linear;
+        -o-transition: width 2s linear;
+        /* Transicion */
+        /*  animacion @keyframe*/
+        /*
+        animation: animateBar 2s 1;
+        -webkit-animation: animateBar 2s 1;
+        -moz-animation: animateBar 2s 1;
+        */
+
+        &:hover {
+        width: 50%;
+        }
+
+        .valueBar {
+            text-align: center;
+            position: relative;
+            margin: auto;   
+        }
+    }
+}

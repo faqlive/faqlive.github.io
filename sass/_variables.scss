@@ -1,0 +1,30 @@
+//PALETA DE COLORES
+/*
+$color01:#363836;
+$color02:#C8CFC9;
+$color03:#4B664E;
+$color04:#3BA147;
+$color05:#4d4f4d;
+
+*/
+$color06:rgba(77, 79, 77,1);
+//RESET
+
+$color05:#2A5463;
+$color02:#CEF0FC;
+$color04:#5FC0E3;
+$color01:#485C63;
+$color03:#4A95B0;
+$color07:rgb(2, 34, 173);
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+*{
+    margin: 0;
+}
+*{
+	box-sizing: border-box; // OCUPA SOLO HASTA EL BORDE -  NEGOCIA ENTRE EL ANCHO Y EL PADDING PARA NO SALIRSE
+}
+//FONTS
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Amaranth|Amita|Carter+One|Courgette|DM+Serif+Text|Fredoka+One|Lexend+Deca|Lobster|Oleo+Script|Quattrocento&display=swap");

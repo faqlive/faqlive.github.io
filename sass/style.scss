@@ -1,0 +1,365 @@
+@import "variables";
+@import "reset";
+@import "carrussel";
+@import "progresbar";
+@import "nav";
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Prompt:wght@300&family=Source+Code+Pro&display=swap');
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Prompt', sans-serif;
+*/
+a{
+    cursor:  !important;
+}
+body{
+    overflow: hidden;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.2fr 4fr ;
+    grid-template-rows: 0.5fr 4fr 4fr 0.1fr ;
+    grid-template-areas:"navbar header" 
+                        "navbar main"
+                        "navbar main"
+                        "navbar footer";
+    justify-content: stretch;
+    align-content: stretch;
+    font-family: 'Source Code Pro', monospace;
+   h2, h3{
+       color: $color07;
+       font-family: 'Prompt', sans-serif !important;
+       border-bottom: solid 1px $color03;
+       span{
+           color:$color06,
+       }
+   }
+  
+
+   .d-block.d-lg-none{
+    font-family:'Lobster', cursive !important;
+   }
+    header{
+        grid-area: header !important;
+        background:-moz-linear-gradient(60deg, $color05 25%, $color03 90%); 
+        background:-webkit-linear-gradient(60deg,$color05 25%, $color03 90%);
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        top: 0vh;
+        box-sizing: border-box;
+        justify-content: center;
+        
+        h1{
+            font-family:'Lobster', cursive !important;
+            flex: 1 1 auto;
+            margin: auto;
+            color: white;
+            text-align: center;
+            font-size: 3em;
+            font-family: 'Amaranth', sans-serif;
+            text-shadow: $color01 3px 3px 7px;
+            
+        }
+
+    }
+    nav{
+        position: relative !important;
+        grid-area: navbar  !important;
+        background: $color05;
+        width: auto !important;
+        li{
+            cursor: pointer !important;
+        }
+    }
+    figure.icon{
+        display: flex;
+        background: transparent;
+        position: relative;
+        flex-direction: column;
+        align-content: stretch;
+
+        
+        img{
+            //position: relative;
+            //height: 100%;
+            max-height: 145px;
+            transition: ease-in-out 0.5s;
+            -webkit-transition: ease-in-out 0.5s;
+            -moz-transition: ease-in-out 0.5s;
+            -ms-transition: ease-in-out 0.5s;
+            -o-transition: ease-in-out 0.5s;
+
+            &:hover {
+                transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                -o-transform: scale(1.2);
+                figcaption{
+                    display: none;
+                }    
+            }
+           
+        }
+        figcaption{
+
+            color: white;
+            background: $color06;
+            position: absolute;
+            height: 35%;
+            bottom: 0px;
+            width: 100%;
+            z-index: 10;
+            text-align: center;
+            border-radius: 50% /  0 0 100% 100%;
+            -webkit-border-radius: 50% /  0 0 100% 100%;
+            -moz-border-radius: 50% /  0 0 100% 100%;
+            -ms-border-radius: 50% /  0 0 100% 100%;
+            -o-border-radius: 50% /  0 0 100% 100%;
+        }
+       
+    }
+    main{
+        position: static;
+        grid-area: main;
+        box-sizing: border-box;
+        background: $color02;
+        height: 100%;
+        padding: auto 5%;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: stretch;
+        align-items: center;
+
+        section{
+            display: flex;
+            flex-flow: column;
+            position: absolute;
+            flex: 1 1 auto;
+            text-align: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 2%px 2%;
+            min-width: auto;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out; 
+            
+            h4{
+                font-family:'Prompt', sans-serif;
+                color: $color05 !important;
+             }
+            article{
+
+                margin: 0 auto;
+                
+            }
+            div.timeline{
+                position: relative;
+                margin: 0px;
+                width: 100%;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    top: 1.5em;
+                    bottom:1.5em;
+                    left: 3em;         
+               //     margin-left: px;
+                    background-color: $color05;            
+                }
+                article{
+                    position: relative;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 1.5em;
+                        height: 1.5em;
+                        left: 1.5em;
+                        background-color:$color05;
+                 //       border: 4px solid $color03;
+                        top: 1em;
+                        border-radius: 50%;
+                        z-index: 1;
+                    }
+
+                }
+
+            }
+            article > details{
+                margin: 1em 0;
+                min-width: 100%;
+                p{
+                    padding: 0.5em 4em;
+                }
+                summary{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: stretch;
+                    align-items: baseline;
+                    justify-content: space-around;
+                    border-bottom: double 0.5em $color05;
+                    border-top: double 0.5em $color05;
+                    margin: auto;
+                    padding: 0 4em;
+                }
+                summary[open]{
+   
+
+                    &:before {
+                        display: none;
+                    }
+                }
+     
+        }
+        
+        #presentation {
+            top: 0vh;
+            display: flex;
+        }
+        #education {
+            top: 100vh;
+            display: flex;
+            margin-bottom: 0 auto;
+            flex-direction: column;
+            justify-content: center;
+            align-content: stretch;
+            position: relative;
+
+        }
+        #skills {
+            top: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 50px;
+            .desc{
+                font-family:  'Source Code Pro', monospace;
+            }
+        }
+        #experience {
+            top: 100vh;
+            display: flex;
+            margin-bottom: 0 auto;
+            flex-direction: column;
+            justify-content: center;
+            align-content: stretch;
+            position: relative;
+           
+            }
+           
+        }
+        #interests{
+            top: 100vh;
+            display: flex;
+        }
+        #certification{
+            top: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: auto 0;
+            div.certific{
+                display: flex;
+                position: relative;
+                flex-direction: row;
+  
+                img{
+                    position: relative;
+                    line-height: unset;
+                    width: 5%;
+                    max-height: 150px !important;
+                    max-width: 150px !important;
+                    display: inline-block;
+                    position: relative;
+                    align-items: center;
+
+                }
+            }
+        }
+       
+    }
+    footer{
+        margin: 0px auto !important;
+        padding: 0px !important;
+        display: flex;
+        flex-direction: column;
+        grid-area: footer !important;
+        display: block;
+        width: 100%;
+        bottom: 0vh;
+        background: $color05;
+        z-index: 10;
+        align-content: center;
+        align-items: stretch;
+        justify-items: stretch;
+     //   max-height: 150px;
+        hr{
+            width: 80%;
+           
+            margin: 0;
+            align-self: center;
+            border-color:solid 1px black;
+            size: 1px;
+        }
+        address{
+            width: 100%;
+            font-family:'Source Code Pro', monospace;
+            align-content: center;
+            margin: 0px auto !important;
+            display: flex;
+            flex-direction: row;
+            align-content: stretch;
+            justify-content: space-evenly;
+            align-items: baseline;
+  
+            h6{
+                color: $color02;
+            }
+        }
+        .foot-between{
+            margin: 0px auto !important;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            align-content: stretch;
+            justify-content: space-evenly;
+            div{
+                padding: 0 !important;
+                margin:0px auto;
+            }
+        }
+    }
+}
+
+section.resume-section {
+    padding: 0px 2em !important;
+    margin: auto 0px;
+
+
+  }
+  
+@media screen and (max-width: 992px) {
+    header{
+        display: none !important;
+      }
+    nav{
+        position: fixed !important;
+    }
+   body{
+        grid-template-columns: auto;
+        grid-template-rows: 0.2fr 1fr 1fr 0.3fr;
+        grid-template-areas:"navbar" 
+                            "main"
+                            "main"
+                            "footer";
+    }
+    
+}
+
+
