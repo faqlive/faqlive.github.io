@@ -295,7 +295,7 @@ body {
   align-content: stretch;
   font-family: 'Source Code Pro', monospace; }
   body h2, body h3 {
-    color: #0222ad;
+    color: #007bff;
     font-family: 'Prompt', sans-serif !important;
     border-bottom: solid 1px #4A95B0; }
     body h2 span, body h3 span {
@@ -392,7 +392,11 @@ body {
       transition: all 0.2s ease-in-out; }
       body main section h4 {
         font-family: 'Prompt', sans-serif;
-        color: #2A5463 !important; }
+        color: #007bff !important;
+        margin: 0;
+        size: 1.1em; }
+      body main section p {
+        margin: 0; }
       body main section article {
         margin: 0 auto; }
       body main section div.timeline {
@@ -416,6 +420,7 @@ body {
             height: 1.5em;
             left: 1.5em;
             background-color: #2A5463;
+            border: 4px solid #4A95B0;
             top: 1em;
             border-radius: 50%;
             z-index: 1; }
@@ -423,6 +428,7 @@ body {
         margin: 1em 0;
         min-width: 100%; }
         body main section article > details p {
+          size: 0.9em;
           padding: 0.5em 4em; }
         body main section article > details summary {
           display: flex;
@@ -430,10 +436,17 @@ body {
           align-content: stretch;
           align-items: baseline;
           justify-content: space-around;
-          border-bottom: double 0.5em #2A5463;
-          border-top: double 0.5em #2A5463;
+          border-bottom: double 0.2em #2A5463;
+          border-top: double 0.2em #2A5463;
           margin: auto;
-          padding: 0 4em; }
+          padding: 0 4em;
+          transition: ease-in-out 0.2s;
+          -webkit-transition: ease-in-out 0.2s;
+          -moz-transition: ease-in-out 0.2s;
+          -ms-transition: ease-in-out 0.2s;
+          -o-transition: ease-in-out 0.2s; }
+          body main section article > details summary::-webkit-details-marker {
+            display: none; }
         body main section article > details summary[open]:before {
           display: none; }
       body main section #presentation {
@@ -453,6 +466,10 @@ body {
         flex-direction: column;
         justify-content: center;
         padding-bottom: 50px; }
+        body main section #skills a {
+          display: block;
+          width: 2em;
+          padding: 0 !important; }
         body main section #skills .desc {
           font-family: 'Source Code Pro', monospace; }
       body main section #experience {
@@ -462,7 +479,9 @@ body {
         flex-direction: column;
         justify-content: center;
         align-content: stretch;
-        position: relative; }
+        position: relative;
+        width: 100%;
+        padding: 0 1em; }
     body main #interests {
       top: 100vh;
       display: flex; }
@@ -470,17 +489,19 @@ body {
       top: 100vh;
       display: flex;
       flex-direction: column;
-      margin: auto 0; }
+      margin: auto 0;
+      width: 100%; }
       body main #certification div.certific {
         display: flex;
         position: relative;
-        flex-direction: row; }
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 3em;
+        width: 100%; }
         body main #certification div.certific img {
-          position: relative;
-          line-height: unset;
-          width: 5%;
           max-height: 150px !important;
-          max-width: 150px !important;
           display: inline-block;
           position: relative;
           align-items: center; }
@@ -525,6 +546,14 @@ body {
       align-items: baseline;
       align-content: stretch;
       justify-content: space-evenly; }
+      body footer .foot-between flexi {
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: space-evenly; }
+        body footer .foot-between flexi a {
+          padding: 0;
+          margin: 0 auto; }
       body footer .foot-between div {
         padding: 0 !important;
         margin: 0px auto; }
