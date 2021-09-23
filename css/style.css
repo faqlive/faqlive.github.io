@@ -289,7 +289,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template-columns: 1.2fr 4fr;
-  grid-template-rows: 0.5fr 4fr 4fr 1fr;
+  grid-template-rows: 0.5fr 4fr 4fr 1.2fr;
   grid-template-areas: "navbar header" "navbar main" "navbar main" "navbar footer";
   justify-content: stretch;
   align-content: stretch;
