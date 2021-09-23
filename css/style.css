@@ -383,7 +383,8 @@ body {
       text-align: center;
       justify-content: center;
       height: 100vh;
-      padding: 2% px 2%;
+      width: 80vmax;
+      padding: 2% 2%;
       min-width: auto;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
