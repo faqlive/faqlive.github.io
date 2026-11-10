@@ -119,3 +119,52 @@ test("separate sections, history, deep links and reduced motion", async ({
     page.getByRole("heading", { name: "Facundo J. López", exact: true }),
   ).toBeVisible();
 });
+
+test("experience details expand independently between heading and technology tags", async ({
+  page,
+}) => {
+  await page.goto("/#experiencia");
+  const cards = page.locator("#experiencia .entry-card");
+  const first = cards.nth(0);
+  const second = cards.nth(1);
+  await expect(
+    first.getByRole("heading", { name: "Backend Java Developer", exact: true }),
+  ).toBeVisible();
+  await expect(first.locator(".organization")).toHaveText(
+    "Capgemini Engineering",
+  );
+  await expect(first.locator(".entry-description")).toBeHidden();
+  await expect(first.locator(".tags")).toBeVisible();
+  const toggle = first.getByRole("button", { name: /Ver detalles/ });
+  await toggle.focus();
+  await page.keyboard.press("Enter");
+  await expect(
+    first.getByRole("button", { name: /Ocultar detalles/ }),
+  ).toHaveAttribute("aria-expanded", "true");
+  await expect(first.locator(".entry-description")).toBeVisible();
+  await expect(second.locator(".entry-description")).toBeHidden();
+  await second.getByRole("button", { name: /Ver detalles/ }).click();
+  await expect(first.locator(".entry-description")).toBeVisible();
+  await expect(second.locator(".entry-description")).toBeVisible();
+  expect(
+    await first.locator(".entry-description").evaluate((el) => {
+      const tags = el.parentElement?.querySelector(".tags");
+      return Boolean(
+        tags &&
+        el.compareDocumentPosition(tags) & Node.DOCUMENT_POSITION_FOLLOWING,
+      );
+    }),
+  ).toBe(true);
+  await first.getByRole("button", { name: /Ocultar detalles/ }).click();
+  await expect(first.locator(".entry-description")).toBeHidden();
+  await expect(first.locator(".tags")).toBeVisible();
+  await page.emulateMedia({ media: "print" });
+  await expect(first.locator(".entry-description")).toBeVisible();
+  await expect(first.locator(".entry-toggle")).toBeHidden();
+  await page.emulateMedia({ media: "screen" });
+  await page.goto("/#educacion");
+  await expect(
+    page.locator("#educacion .entry-description").first(),
+  ).toBeVisible();
+  await expect(page.locator("#educacion .entry-toggle")).toHaveCount(0);
+});

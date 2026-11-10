@@ -93,3 +93,7 @@ Las certificaciones conservan los datos anteriores y no forman parte de esta act
 En pantalla se muestra un único apartado. `useSectionNavigation` sincroniza la selección con el fragmento de la URL y los botones atrás/adelante. `SectionPanel` aplica una entrada de 220 ms con desvanecimiento y desplazamiento suave, desactivada si se solicita reducir movimiento. Al imprimir se muestran todos los apartados.
 
 La paleta recupera los tonos del CV original: azul petróleo `#2A5463`, azul medio `#4A95B0` y celeste `#CEF0FC`. El preset de PrimeVue se configura en `src/main.ts` y los estilos de presentación en `src/styles.css`.
+
+## Experiencias desplegables
+
+`EntryTimeline` acepta la prop opcional `collapsible`, activada solo en experiencia. Cada `TimelineCard` mantiene su propio estado: empresa, puesto y tecnologías siempre visibles; ubicación, descripción y aportaciones aparecen entre el encabezado y los tags al pulsar «Ver detalles». Se pueden abrir varias experiencias a la vez. Formación conserva su presentación completa y la impresión muestra todas las descripciones.

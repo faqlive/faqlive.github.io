@@ -41,7 +41,7 @@ const { activeSection } = useSectionNavigation(
         id="experiencia"
         title="Experiencia profesional"
         eyebrow="01 / Trayectoria"
-        ><EntryTimeline :entries="experience"
+        ><EntryTimeline :entries="experience" collapsible
       /></ResumeSection>
     </SectionPanel>
     <SectionPanel :active="activeSection === 'habilidades'">
