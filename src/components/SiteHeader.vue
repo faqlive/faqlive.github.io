@@ -4,6 +4,7 @@ import Button from "primevue/button";
 const open = ref(false);
 defineProps<{
   name: string;
+  activeSection: string;
   sections: readonly { id: string; label: string }[];
 }>();
 </script>
@@ -31,6 +32,7 @@ defineProps<{
           v-for="section in sections"
           :key="section.id"
           :href="`#${section.id}`"
+          :aria-current="activeSection === section.id ? 'page' : undefined"
           @click="open = false"
           >{{ section.label }}</a
         >
