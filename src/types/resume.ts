@@ -7,6 +7,7 @@ export interface TimelineEntry {
   description?: string;
   highlights?: string[];
   technologies?: string[];
+  competencies?: string[];
   note?: string;
 }
 export interface Certificate {

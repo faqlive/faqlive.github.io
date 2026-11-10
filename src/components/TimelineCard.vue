@@ -55,12 +55,22 @@ const id = useId();
           </p>
         </div>
       </Transition>
-      <div v-if="entry.technologies?.length" class="tags">
+      <div
+        v-if="entry.technologies?.length || entry.competencies?.length"
+        class="tags"
+      >
         <Tag
           v-for="technology in entry.technologies"
           :key="technology"
           :value="technology"
           severity="secondary"
+        />
+        <Tag
+          v-for="competency in entry.competencies"
+          :key="competency"
+          :value="competency"
+          severity="secondary"
+          class="competency-tag"
         />
       </div>
     </template>
