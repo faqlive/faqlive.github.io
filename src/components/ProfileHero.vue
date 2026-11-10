@@ -7,8 +7,6 @@ defineProps<{
     headline: string;
     summary: string;
     email: string;
-    github: string;
-    linkedin: string;
     photo: string;
   };
 }>();
@@ -34,13 +32,6 @@ const printResume = () => window.print();
           outlined
           @click="printResume"
         />
-      </div>
-      <div class="social-links">
-        <a :href="profile.github" target="_blank" rel="noopener noreferrer"
-          ><i class="pi pi-github" aria-hidden="true"></i> GitHub</a
-        ><a :href="profile.linkedin" target="_blank" rel="noopener noreferrer"
-          ><i class="pi pi-linkedin" aria-hidden="true"></i> LinkedIn</a
-        >
       </div>
     </div>
     <div class="portrait-panel">

@@ -842,3 +842,57 @@ nav {
     overflow: visible;
   }
 }
+
+/* Symmetric columns keep social links at the exact center of the footer. */
+.site-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+.footer-social i {
+  font-size: 1.4rem;
+}
+.footer-social a:hover {
+  text-decoration: none;
+  background: #cef0fc;
+}
+.footer-return {
+  justify-self: end;
+  text-align: right;
+}
+@media (max-width: 680px) {
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    font-size: 0.65rem;
+  }
+  .footer-social {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .site-footer > span {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .footer-return {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
