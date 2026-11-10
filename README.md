@@ -67,7 +67,7 @@ Para añadir un certificado:
 
 ## Verificación
 
-`npm test` valida identificadores, recursos y contactos. `npm run build` comprueba TypeScript y la compilación de producción. El workflow de GitHub Actions ejecuta ambos y conserva `dist` como artefacto; no publica el sitio.
+`npm test` valida identificadores, recursos y contactos. `npm run build` comprueba TypeScript y la compilación de producción. El workflow de validación ejecuta ambos y conserva `dist` como artefacto. El workflow `deploy.yml` vuelve a validar antes de publicar en GitHub Pages.
 
 Prueba de navegador adicional:
 
@@ -80,7 +80,7 @@ npx playwright test
 
 ## GitHub Pages
 
-La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. Para un sitio bajo un subdirectorio cambia `base` y las rutas de recursos. Publica el contenido generado en `dist/` mediante GitHub Actions/Pages; no sirvas directamente el código fuente de Vue. La rama de trabajo no modifica por sí misma la publicación actual. No se ha incluido un despliegue automático.
+La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. Para un sitio bajo un subdirectorio cambia `base` y las rutas de recursos. GitHub Pages debe usar **GitHub Actions** como fuente de publicación. Cada push a `master` compila y publica `dist/` mediante `.github/workflows/deploy.yml`. También puede ejecutarse manualmente desde Actions. Las ramas de trabajo no despliegan. No sirvas directamente el código fuente de Vue.
 
 ## Contenido pendiente de actualizar
 
