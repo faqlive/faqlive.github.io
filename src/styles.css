@@ -91,18 +91,7 @@ p {
   font-size: 0.9rem;
   white-space: nowrap;
 }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  background: var(--ink);
-  color: #cef0fc;
-  width: 39px;
-  height: 39px;
-  border-radius: 12px;
-  font-size: 1rem;
-  letter-spacing: -0.04em;
-  font-family: Manrope, sans-serif;
-}
+
 nav {
   display: flex;
   gap: 24px;
@@ -167,34 +156,29 @@ nav {
   margin-right: 7px;
 }
 .portrait-panel {
-  padding: 15px 0 0 20px;
+  width: 100%;
+  max-width: 240px;
+  justify-self: center;
 }
 .portrait-frame {
   position: relative;
   background: #cef0fc;
-  border-radius: 120px 120px 16px 16px;
-  padding: 32px 25px 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid #cef0fc;
   overflow: hidden;
-  box-shadow: 15px 15px 0 #dbeaf0;
+  box-shadow: 8px 8px 0 #dbeaf0;
 }
 .portrait-frame img {
   display: block;
   object-fit: cover;
   object-position: top;
   width: 100%;
-  height: 330px;
-  border-radius: 95px 95px 0 0;
+  height: 100%;
+  border-radius: 50%;
   filter: saturate(0.65);
 }
-.portrait-caption {
-  display: block;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  color: #2a5463;
-  text-align: center;
-  padding: 18px 0;
-  font-weight: 700;
-}
+
 .portrait-detail {
   margin-top: 32px;
   display: flex;
@@ -242,16 +226,7 @@ nav {
   padding-top: 27px;
   position: relative;
 }
-.entry-period:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 34px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #4a95b0;
-}
+
 .entry-card.p-card {
   box-shadow: none;
   border: 1px solid var(--line);
@@ -426,12 +401,6 @@ nav {
   .portrait-panel {
     padding-left: 0;
   }
-  .portrait-frame {
-    padding: 20px 15px 0;
-  }
-  .portrait-frame img {
-    height: 280px;
-  }
   nav {
     gap: 14px;
     font-size: 0.75rem;
@@ -483,12 +452,9 @@ nav {
     font-size: 1.3rem;
   }
   .portrait-panel {
-    max-width: 310px;
+    max-width: 240px;
     width: 100%;
     margin: auto;
-  }
-  .portrait-frame img {
-    height: 260px;
   }
   .portrait-detail {
     margin-top: 25px;
@@ -503,9 +469,7 @@ nav {
   .entry-period {
     padding-top: 0;
   }
-  .entry-period:after {
-    display: none;
-  }
+
   .entry-card .p-card-body {
     padding: 22px;
   }
@@ -608,9 +572,7 @@ nav {
   .entry-period {
     padding-top: 0;
   }
-  .entry-period:after {
-    display: none;
-  }
+
   .entry-card h3 {
     font-size: 12pt;
     margin-bottom: 8px;
@@ -667,11 +629,7 @@ nav {
 .site-header .menu-toggle {
   color: #fff;
 }
-.brand-mark {
-  background: #2a5463;
-  color: #cef0fc;
-  border: 1px solid #cef0fc;
-}
+
 .site-header nav a {
   padding: 6px 0;
   border-bottom: 2px solid transparent;

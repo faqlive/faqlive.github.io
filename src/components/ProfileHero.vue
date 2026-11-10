@@ -39,9 +39,9 @@ const printResume = () => window.print();
         <img
           :src="profile.photo"
           :alt="profile.name"
-          width="320"
-          height="360"
-        /><span class="portrait-caption">JAVA / WEB / BUSINESS RULES</span>
+          width="240"
+          height="240"
+        />
       </div>
       <div class="portrait-detail">
         <span>Perfil profesional</span

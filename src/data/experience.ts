@@ -2,6 +2,11 @@ import type { TimelineEntry } from "../types/resume";
 export const experience: TimelineEntry[] = [
   {
     id: "capgemini",
+    competencies: [
+      "Trabajo en equipo",
+      "Resolución de problemas",
+      "Mejora de procesos",
+    ],
     period: "Jul. 2025 — Actualidad",
     title: "Backend Java Developer",
     organization: "Capgemini Engineering",
@@ -25,6 +30,7 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "proeduca",
+    competencies: ["Iniciativa", "Adaptación al cambio", "Mejora de procesos"],
     period: "Feb. 2022 — Jul. 2025",
     title: "Java Full Stack Developer",
     organization: "PROEDUCA",
@@ -55,6 +61,11 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "decide",
+    competencies: [
+      "Pensamiento analítico",
+      "Planificación de pruebas",
+      "Atención al detalle",
+    ],
     period: "Jul. 2020 — Ene. 2022",
     title: "Junior Java Developer",
     organization: "decide4AI",
@@ -67,6 +78,11 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "gss",
+    competencies: [
+      "Atención al usuario",
+      "Resolución de incidencias",
+      "Gestión de plataformas",
+    ],
     period: "Nov. 2014 — Jul. 2019",
     title: "Helpdesk",
     organization: "GSS (Global Sales Solutions)",
@@ -80,6 +96,13 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "mentalroots",
+    competencies: [
+      "Gestión de compras",
+      "Gestión de stock",
+      "Gestión de clientes",
+      "Ventas",
+      "Formación a usuarios",
+    ],
     period: "Sept. 2010 — Feb. 2013",
     title: "Socio fundador",
     organization: "MentalRoots",
@@ -91,6 +114,11 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "metalsur",
+    competencies: [
+      "Análisis de procesos",
+      "Organización del trabajo",
+      "Mejora de procesos",
+    ],
     period: "Jul. 2010 — Jul. 2011",
     title: "Oficina de Ingeniería de Manufactura",
     organization: "Metal Sur",

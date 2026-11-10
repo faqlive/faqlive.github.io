@@ -11,9 +11,7 @@ defineProps<{
 <template>
   <header class="site-header">
     <div class="nav-container">
-      <a href="#inicio" class="brand" @click="open = false"
-        ><span class="brand-mark" aria-hidden="true">FJL</span
-        ><span>{{ name }}</span></a
+      <a href="#inicio" class="brand" @click="open = false">{{ name }}</a
       ><Button
         class="menu-toggle"
         :icon="open ? 'pi pi-times' : 'pi pi-bars'"

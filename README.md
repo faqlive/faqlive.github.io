@@ -53,7 +53,7 @@ Para añadir un certificado:
 }
 ```
 
-`description`, `highlights`, `technologies`, `location` y `note` son opcionales en las entradas de experiencia y formación. Un certificado sin imagen muestra un icono. Mantén los registros en el orden deseado; las fechas son texto libre para admitir periodos incompletos sin lógica de ordenación ambigua. Ejecuta `npm test` y `npm run build` después de editar.
+`description`, `highlights`, `technologies`, `competencies`, `location` y `note` son opcionales en las entradas de experiencia y formación. Un certificado sin imagen muestra un icono. Mantén los registros en el orden deseado; las fechas son texto libre para admitir periodos incompletos sin lógica de ordenación ambigua. Ejecuta `npm test` y `npm run build` después de editar.
 
 ## Arquitectura: SOLID y KISS
 
@@ -97,3 +97,5 @@ La paleta recupera los tonos del CV original: azul petróleo `#2A5463`, azul med
 ## Experiencias desplegables
 
 `EntryTimeline` acepta la prop opcional `collapsible`, activada solo en experiencia. Cada `TimelineCard` mantiene su propio estado: empresa, puesto y tecnologías siempre visibles; ubicación, descripción y aportaciones aparecen entre el encabezado y los tags al pulsar «Ver detalles». Se pueden abrir varias experiencias a la vez. Formación conserva su presentación completa y la impresión muestra todas las descripciones.
+
+Las habilidades blandas y de gestión se añaden al array opcional `competencies` de cada experiencia; aparecen como tags junto a las tecnologías, incluso con los detalles cerrados. Las etiquetas actuales resumen responsabilidades ya descritas, sin añadir cargos de liderazgo ni niveles de dominio.
