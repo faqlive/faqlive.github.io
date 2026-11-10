@@ -107,7 +107,25 @@ const { activeSection } = useSectionNavigation(
     </SectionPanel>
   </main>
   <footer class="site-footer">
-    <span>© {{ new Date().getFullYear() }} {{ profile.name }}</span
-    ><a href="#inicio">Volver a presentación</a>
+    <span>© {{ new Date().getFullYear() }} {{ profile.name }}</span>
+    <div class="footer-social" role="group" aria-label="Redes sociales">
+      <a
+        :href="profile.github"
+        aria-label="GitHub"
+        title="GitHub"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="pi pi-github" aria-hidden="true"></i
+      ></a>
+      <a
+        :href="profile.linkedin"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="pi pi-linkedin" aria-hidden="true"></i
+      ></a>
+    </div>
+    <a class="footer-return" href="#inicio">Volver a presentación</a>
   </footer>
 </template>
