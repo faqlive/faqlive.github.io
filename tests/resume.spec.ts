@@ -1,3 +1,5 @@
+import { experience } from "../src/data/experience";
+import { education } from "../src/data/education";
 import { test, expect } from "@playwright/test";
 
 test("desktop content, contacts, resources and print action", async ({
@@ -16,7 +18,9 @@ test("desktop content, contacts, resources and print action", async ({
   await expect(
     page.getByRole("heading", { name: "Experiencia profesional" }),
   ).toBeHidden();
-  await expect(page.locator(".entry")).toHaveCount(9);
+  await expect(page.locator(".entry")).toHaveCount(
+    experience.length + education.length,
+  );
   await expect(page.locator(".certificate-card")).toHaveCount(2);
   await expect(page.locator(".contact-email")).toHaveAttribute(
     "href",

@@ -53,7 +53,7 @@ Para añadir un certificado:
 }
 ```
 
-`description`, `highlights`, `technologies` y `note` son opcionales en las entradas de experiencia y formación. Un certificado sin imagen muestra un icono. Mantén los registros en el orden deseado; las fechas son texto libre para admitir periodos incompletos sin lógica de ordenación ambigua. Ejecuta `npm test` y `npm run build` después de editar.
+`description`, `highlights`, `technologies`, `location` y `note` son opcionales en las entradas de experiencia y formación. Un certificado sin imagen muestra un icono. Mantén los registros en el orden deseado; las fechas son texto libre para admitir periodos incompletos sin lógica de ordenación ambigua. Ejecuta `npm test` y `npm run build` después de editar.
 
 ## Arquitectura: SOLID y KISS
 
@@ -82,9 +82,11 @@ npx playwright test
 
 La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. Para un sitio bajo un subdirectorio cambia `base` y las rutas de recursos. GitHub Pages debe usar **GitHub Actions** como fuente de publicación. Cada push a `master` compila y publica `dist/` mediante `.github/workflows/deploy.yml`. También puede ejecutarse manualmente desde Actions. Las ramas de trabajo no despliegan. No sirvas directamente el código fuente de Vue.
 
-## Contenido pendiente de actualizar
+## Fuentes del contenido
 
-La fuente original es de 2021. La entrada de DECIDE conserva el cargo original y avisa de que la vigencia del puesto debe confirmarse. No se han añadido empleos, versiones recientes, resultados ni credenciales no facilitadas. Comprueba la denominación y los datos de cada certificado. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico sigue disponible en `public/CV-FJL-092021.pdf`, pero el botón de impresión genera una versión del contenido actual.
+Experiencia y educación se han actualizado con el texto del perfil de LinkedIn facilitado por su titular en esta conversación. Las fechas se expresan como periodos, sin duraciones calculadas. El apartado profesional contiene los seis puestos del perfil y el académico sus cuatro estudios; los proyectos propios del CV anterior no se presentan como un empleo adicional.
+
+Las certificaciones conservan los datos anteriores y no forman parte de esta actualización. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico de 2021 sigue disponible en `public/CV-FJL-092021.pdf`; el botón de impresión genera un documento con el contenido actual.
 
 ## Navegación por apartados y estilo
 
