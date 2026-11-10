@@ -1,31 +1,31 @@
 import type { TimelineEntry } from "../types/resume";
 export const education: TimelineEntry[] = [
   {
+    id: "unir-devops",
+    period: "Feb. 2024 — Feb. 2025",
+    title: "Máster Universitario en Desarrollo y Operaciones (MUDEVOPS)",
+    organization: "UNIR · Universidad Internacional de La Rioja",
+    description: "Calificación: Notable.",
+    technologies: ["Amazon Web Services (AWS)", "Microsoft Azure"],
+  },
+  {
     id: "cice",
     period: "2019 — 2020",
-    title: "Máster en Java y Administración de Bases de Datos",
-    organization: "CICE · Escuela de Nuevas Tecnologías",
-    description: "Programa MJO orientado a Java y bases de datos Oracle.",
+    title:
+      "Máster en Java y Administración de Bases de Datos – Oficial de Oracle",
+    organization: "CICE · La Escuela Profesional de Nuevas Tecnologías",
   },
   {
-    id: "seas",
-    period: "2013 — 2014",
-    title: "Gestión Integral de Seguridad, Sistemas y Redes Informáticas",
-    organization: "SEAS · Estudios Superiores Abiertos",
-  },
-  {
-    id: "politecnico",
-    period: "2009 — 2013",
+    id: "unr-gestion",
+    period: "2008 — 2012",
     title: "Técnico Universitario en Gestión y Producción",
-    organization: "Instituto Politécnico Superior Gral. San Martín",
-    description:
-      "Formación orientada a optimizar procesos productivos, administrativos y de servicios. Homologado como Diplomatura en España según el currículum original.",
+    organization: "Universidad Nacional de Rosario (UNR)",
+    description: "Homologado como Diplomado en España.",
   },
   {
-    id: "unr",
-    period: "2010 — 2011",
-    title: "Ingeniería Eléctrica · Primer año aprobado",
-    organization:
-      "Universidad Nacional de Rosario · Facultad de Ingeniería y Ciencias Exactas",
+    id: "politecnico-bachiller",
+    period: "2000 — 2004",
+    title: "Bachiller en Producción de Bienes y Servicios",
+    organization: "Instituto Politécnico Superior Gral. San Martín · UNR",
   },
 ];

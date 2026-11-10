@@ -12,6 +12,9 @@ defineProps<{ entries: readonly TimelineEntry[] }>();
         ><template #content
           ><p class="organization">{{ entry.organization }}</p>
           <h3>{{ entry.title }}</h3>
+          <p v-if="entry.location" class="entry-location">
+            {{ entry.location }}
+          </p>
           <p v-if="entry.description">{{ entry.description }}</p>
           <ul v-if="entry.highlights?.length" class="highlights">
             <li v-for="highlight in entry.highlights" :key="highlight">

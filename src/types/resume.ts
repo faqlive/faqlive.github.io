@@ -3,6 +3,7 @@ export interface TimelineEntry {
   period: string;
   title: string;
   organization: string;
+  location?: string;
   description?: string;
   highlights?: string[];
   technologies?: string[];
