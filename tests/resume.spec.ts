@@ -15,12 +15,13 @@ test("desktop content, contacts, resources and print action", async ({
   ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Experiencia profesional" }),
-  ).toBeVisible();
+  ).toBeHidden();
   await expect(page.locator(".entry")).toHaveCount(9);
   await expect(page.locator(".certificate-card")).toHaveCount(2);
-  await expect(
-    page.getByRole("link", { name: "facundojlopez@gmail.com", exact: true }),
-  ).toHaveAttribute("href", "mailto:facundojlopez@gmail.com");
+  await expect(page.locator(".contact-email")).toHaveAttribute(
+    "href",
+    "mailto:facundojlopez@gmail.com",
+  );
   await page.evaluate(() => {
     window.print = () => {
       document.body.dataset.printed = "true";
@@ -29,8 +30,9 @@ test("desktop content, contacts, resources and print action", async ({
   await page.getByRole("button", { name: "Guardar PDF" }).click();
   await expect(page.locator("body")).toHaveAttribute("data-printed", "true");
   await page
-    .getByRole("heading", { name: "Certificaciones", exact: true })
-    .scrollIntoViewIfNeeded();
+    .getByRole("navigation")
+    .getByRole("link", { name: "Certificados", exact: true })
+    .click();
   await page.waitForFunction(() =>
     Array.from(document.images).every(
       (img) => img.complete && img.naturalWidth > 0,
@@ -64,4 +66,52 @@ test("mobile menu, anchors and no horizontal overflow", async ({ page }) => {
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
+});
+
+test("separate sections, history, deep links and reduced motion", async ({
+  page,
+}) => {
+  await page.goto("/#experiencia");
+  await expect(page.locator(".section-panel:visible")).toHaveCount(1);
+  await expect(
+    page.getByRole("heading", { name: "Experiencia profesional" }),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByRole("navigation")
+      .getByRole("link", { name: "Experiencia", exact: true }),
+  ).toHaveAttribute("aria-current", "page");
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Formación" })
+    .click();
+  await expect(page.locator(".section-panel:visible")).toHaveCount(1);
+  await expect(
+    page.getByRole("heading", { name: "Formación académica" }),
+  ).toBeVisible();
+  await page.goBack();
+  await expect(
+    page.getByRole("heading", { name: "Experiencia profesional" }),
+  ).toBeVisible();
+  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "Experiencia profesional" }),
+  ).toBeVisible();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Certificados", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Certificaciones", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page
+      .locator(".section-panel:visible")
+      .evaluate((el) => getComputedStyle(el).transitionDuration),
+  ).toBe("0s");
+  await page.goto("/#apartado-inexistente");
+  await expect(
+    page.getByRole("heading", { name: "Facundo J. López", exact: true }),
+  ).toBeVisible();
 });

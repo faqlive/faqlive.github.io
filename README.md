@@ -85,3 +85,9 @@ La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. 
 ## Contenido pendiente de actualizar
 
 La fuente original es de 2021. La entrada de DECIDE conserva el cargo original y avisa de que la vigencia del puesto debe confirmarse. No se han añadido empleos, versiones recientes, resultados ni credenciales no facilitadas. Comprueba la denominación y los datos de cada certificado. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico sigue disponible en `public/CV-FJL-092021.pdf`, pero el botón de impresión genera una versión del contenido actual.
+
+## Navegación por apartados y estilo
+
+En pantalla se muestra un único apartado. `useSectionNavigation` sincroniza la selección con el fragmento de la URL y los botones atrás/adelante. `SectionPanel` aplica una entrada de 220 ms con desvanecimiento y desplazamiento suave, desactivada si se solicita reducir movimiento. Al imprimir se muestran todos los apartados.
+
+La paleta recupera los tonos del CV original: azul petróleo `#2A5463`, azul medio `#4A95B0` y celeste `#CEF0FC`. El preset de PrimeVue se configura en `src/main.ts` y los estilos de presentación en `src/styles.css`.
