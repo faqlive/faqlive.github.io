@@ -108,8 +108,6 @@ const { activeSection } = useSectionNavigation(
   </main>
   <footer class="site-footer">
     <span>© {{ new Date().getFullYear() }} {{ profile.name }}</span
-    ><a href="#inicio"
-      >Volver a presentación <i class="pi pi-arrow-up" aria-hidden="true"></i
-    ></a>
+    ><a href="#inicio">Volver a presentación</a>
   </footer>
 </template>
