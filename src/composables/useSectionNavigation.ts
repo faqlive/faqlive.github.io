@@ -13,8 +13,9 @@ export function useSectionNavigation(
   const syncSection = async () => {
     activeSection.value = readHash();
     await nextTick();
-    window.scrollTo({ top: 0, behavior: "instant" });
-    document.getElementById("contenido")?.focus({ preventScroll: true });
+    const content = document.getElementById("contenido");
+    content?.scrollTo({ top: 0, behavior: "instant" });
+    content?.focus({ preventScroll: true });
   };
   onMounted(() => window.addEventListener("hashchange", syncSection));
   onUnmounted(() => window.removeEventListener("hashchange", syncSection));

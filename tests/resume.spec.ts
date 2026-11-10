@@ -168,3 +168,49 @@ test("experience details expand independently between heading and technology tag
   ).toBeVisible();
   await expect(page.locator("#educacion .entry-toggle")).toHaveCount(0);
 });
+
+for (const viewport of [
+  { width: 1440, height: 900 },
+  { width: 375, height: 812 },
+]) {
+  test(`content scrolls independently with a visible footer at ${viewport.width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport);
+    await page.goto("/#experiencia");
+    const content = page.locator("#contenido");
+    const footer = page.locator(".site-footer");
+    await expect(
+      footer.getByRole("link", { name: "Volver a presentación" }),
+    ).toBeVisible();
+    await expect(footer.locator(".pi-arrow-up")).toHaveCount(0);
+    const before = await footer.boundingBox();
+    await content.evaluate((el) => {
+      el.scrollTop = el.scrollHeight;
+    });
+    expect(await content.evaluate((el) => el.scrollTop)).toBeGreaterThan(0);
+    expect(await footer.boundingBox()).toEqual(before);
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
+    expect(before!.y + before!.height).toBeLessThanOrEqual(viewport.height);
+    expect(
+      await content.evaluate((el) => el.getBoundingClientRect().bottom),
+    ).toBeLessThanOrEqual(before!.y);
+    await footer.getByRole("link", { name: "Volver a presentación" }).click();
+    await expect(page).toHaveURL(/#inicio$/);
+    await expect.poll(() => content.evaluate((el) => el.scrollTop)).toBe(0);
+    if (viewport.width < 681)
+      await page.getByRole("button", { name: "Abrir menú" }).click();
+    const link = page
+      .getByRole("navigation")
+      .getByRole("link", { name: "Formación" });
+    await link.hover();
+    expect(
+      await link.evaluate((el) => getComputedStyle(el).textDecorationLine),
+    ).toBe("none");
+    await page.emulateMedia({ media: "print" });
+    expect(await content.evaluate((el) => getComputedStyle(el).overflowY)).toBe(
+      "visible",
+    );
+    await expect(footer).toBeHidden();
+  });
+}
