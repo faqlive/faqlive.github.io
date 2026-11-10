@@ -741,3 +741,57 @@ nav {
     gap: 18px;
   }
 }
+
+/* Independent disclosures keep technologies visible while details expand. */
+.entry-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.entry-heading > div {
+  min-width: 0;
+}
+.entry-toggle {
+  flex-shrink: 0;
+}
+.entry-details-enter-active,
+.entry-details-leave-active {
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+.entry-details-enter-from,
+.entry-details-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.entry-description .entry-note {
+  margin-bottom: 16px;
+}
+@media (max-width: 680px) {
+  .entry-heading {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 14px;
+  }
+  .entry-toggle {
+    align-self: flex-start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .entry-details-enter-active,
+  .entry-details-leave-active {
+    transition: none;
+  }
+}
+@media print {
+  .entry-toggle {
+    display: none !important;
+  }
+  .entry-description {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
