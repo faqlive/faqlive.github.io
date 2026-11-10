@@ -12,7 +12,7 @@ defineProps<{
   <header class="site-header">
     <div class="nav-container">
       <a href="#inicio" class="brand" @click="open = false"
-        ><span class="brand-mark" aria-hidden="true">F.</span
+        ><span class="brand-mark" aria-hidden="true">FJL</span
         ><span>{{ name }}</span></a
       ><Button
         class="menu-toggle"

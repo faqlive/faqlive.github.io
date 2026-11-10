@@ -99,7 +99,8 @@ p {
   width: 39px;
   height: 39px;
   border-radius: 12px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: -0.04em;
   font-family: Manrope, sans-serif;
 }
 nav {
@@ -822,6 +823,7 @@ nav {
     background: #eef7fa;
   }
 }
+.site-header .brand:hover,
 .site-header nav a:hover {
   text-decoration: none;
 }
