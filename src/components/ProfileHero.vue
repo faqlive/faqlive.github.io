@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLocale } from "../composables/useLocale";
+const { ui } = useLocale();
 import Button from "primevue/button";
 defineProps<{
   profile: {
@@ -23,10 +25,10 @@ const printResume = () => window.print();
         <Button
           as="a"
           :href="`mailto:${profile.email}`"
-          label="Hablemos"
+          :label="ui.letsTalk"
           icon="pi pi-arrow-up-right"
         /><Button
-          label="Guardar PDF"
+          :label="ui.savePdf"
           icon="pi pi-print"
           severity="secondary"
           outlined
@@ -44,8 +46,8 @@ const printResume = () => window.print();
         />
       </div>
       <div class="portrait-detail">
-        <span>Perfil profesional</span
-        ><span>Desarrollo & implementación IT</span>
+        <span>{{ ui.professionalProfile }}</span
+        ><span>{{ ui.itDevelopment }}</span>
       </div>
     </div>
   </section>

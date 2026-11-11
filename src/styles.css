@@ -854,3 +854,160 @@ nav {
     grid-row: 2;
   }
 }
+
+/* Preferences stay next to the mobile menu and remain keyboard accessible. */
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.header-tools .p-button {
+  color: #fff;
+  width: 38px;
+  height: 38px;
+}
+.language-select {
+  font: inherit;
+  font-size: 0.8rem;
+  color: #fff;
+  background: #244957;
+  border: 1px solid #a5c9da;
+  border-radius: 6px;
+  min-height: 38px;
+  padding: 5px;
+  cursor: pointer;
+}
+.language-select:focus-visible {
+  outline: 3px solid #cef0fc;
+  outline-offset: 3px;
+}
+@media (max-width: 1100px) {
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+  .site-header nav {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    background: #2a5463;
+    font-size: 0.95rem;
+  }
+  .site-header nav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+@media (max-width: 680px) {
+  .site-header nav {
+    top: 72px;
+  }
+  .nav-container {
+    gap: 8px;
+  }
+}
+
+/* Dark colours only apply on screen, so PDF output stays light and legible. */
+@media screen {
+  :root.app-dark {
+    color: #e1e6f6;
+    background: #080b13;
+    --ink: #dce7ff;
+    --muted: #b9c1d9;
+    --accent: #c4adff;
+    --line: #303755;
+  }
+  .app-dark body {
+    background: #080b13;
+  }
+  .app-dark .site-header {
+    background: linear-gradient(60deg, #101b36 25%, #352052 90%);
+    border-color: #44416c;
+  }
+  .app-dark .site-header nav {
+    color: #f0edff;
+  }
+  .app-dark .site-header nav a[aria-current="page"] {
+    color: #d6c6ff;
+    border-color: #b99aff;
+  }
+  .app-dark .language-select {
+    background: #1b2238;
+    border-color: #8875b7;
+  }
+  .app-dark .site-footer {
+    background: #0d1221;
+  }
+  .app-dark .entry-card.p-card,
+  .app-dark .certificate-card.p-card {
+    background: #111a2d;
+    border-color: var(--line);
+  }
+  .app-dark .tags .p-tag {
+    background: #202b48;
+    color: #dce7ff;
+  }
+  .app-dark .tags .competency-tag {
+    background: #302044;
+    color: #e4d6ff;
+  }
+  .app-dark .portrait-frame {
+    background: #18233c;
+    border-color: #4c477c;
+    box-shadow: 8px 8px 0 #241a3c;
+  }
+  .app-dark .portrait-detail {
+    border-color: #a68be0;
+  }
+  .app-dark .project-callout {
+    background: #151c33;
+    border: 1px solid #4c3b6c;
+  }
+  .app-dark .project-callout .eyebrow {
+    color: #c9b3ff;
+  }
+  .app-dark .project-callout .p-button {
+    background: #d8c5ff;
+    border-color: #d8c5ff;
+    color: #201536;
+  }
+  .app-dark .footer-social a:hover {
+    background: #302044;
+  }
+  .app-dark .skip-link {
+    background: #1b2238;
+    color: #fff;
+  }
+  .app-dark a:focus-visible,
+  .app-dark button:focus-visible {
+    outline-color: #c4adff;
+  }
+  @media (max-width: 1100px) {
+    .app-dark .site-header nav {
+      background: #151b30;
+    }
+  }
+}
+@media print {
+  :root.app-dark {
+    color-scheme: light !important;
+    color: #111;
+    background: #fff;
+    --ink: #2a5463;
+    --muted: #444;
+    --accent: #2a5463;
+    --line: #ccc;
+  }
+  .app-dark .p-card {
+    background: #fff;
+    color: #111;
+  }
+  .app-dark .tags .p-tag {
+    background: #fff;
+    color: #243b39;
+  }
+}
