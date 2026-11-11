@@ -369,6 +369,7 @@ nav {
   margin-top: 10px;
 }
 .site-footer {
+  max-width: none;
   border-top: 1px solid var(--line);
   padding-top: 28px;
   padding-bottom: 28px;
