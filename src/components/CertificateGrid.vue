@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLocale } from "../composables/useLocale";
+const { ui } = useLocale();
 import Card from "primevue/card";
 import Button from "primevue/button";
 import type { Certificate } from "../types/resume";
@@ -15,7 +17,7 @@ defineProps<{ certificates: readonly Certificate[] }>();
           <img
             v-if="certificate.image"
             :src="certificate.image"
-            :alt="`Distintivo de ${certificate.name}`"
+            :alt="`${ui.badge} ${certificate.name}`"
           /><i v-else class="pi pi-verified" aria-hidden="true"></i>
         </div>
         <p v-if="certificate.issuer" class="organization">
@@ -26,7 +28,7 @@ defineProps<{ certificates: readonly Certificate[] }>();
           v-if="certificate.credentialUrl"
           as="a"
           :href="certificate.credentialUrl"
-          label="Ver credencial"
+          :label="ui.credential"
           icon="pi pi-external-link"
           variant="text"
           target="_blank"

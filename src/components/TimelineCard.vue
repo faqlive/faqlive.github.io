@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useLocale } from "../composables/useLocale";
+const { ui } = useLocale();
 import { ref, useId } from "vue";
 import Card from "primevue/card";
 import Button from "primevue/button";
@@ -21,9 +23,9 @@ const id = useId();
         <Button
           v-if="collapsible"
           class="entry-toggle"
-          :label="expanded ? 'Ocultar detalles' : 'Ver detalles'"
+          :label="expanded ? ui.hideDetails : ui.showDetails"
           :icon="expanded ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"
-          :aria-label="`${expanded ? 'Ocultar' : 'Ver'} detalles de ${entry.title} en ${entry.organization}`"
+          :aria-label="`${expanded ? ui.hideDetails : ui.showDetails} · ${entry.title} · ${entry.organization}`"
           :aria-expanded="expanded"
           :aria-controls="`${id}-details`"
           severity="secondary"

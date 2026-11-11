@@ -99,3 +99,11 @@ La paleta recupera los tonos del CV original: azul petróleo `#2A5463`, azul med
 `EntryTimeline` acepta la prop opcional `collapsible`, activada solo en experiencia. Cada `TimelineCard` mantiene su propio estado: empresa, puesto y tecnologías siempre visibles; ubicación, descripción y aportaciones aparecen entre el encabezado y los tags al pulsar «Ver detalles». Se pueden abrir varias experiencias a la vez. Formación conserva su presentación completa y la impresión muestra todas las descripciones.
 
 Las habilidades blandas y de gestión se añaden al array opcional `competencies` de cada experiencia; aparecen como tags junto a las tecnologías, incluso con los detalles cerrados. Las etiquetas actuales resumen responsabilidades ya descritas, sin añadir cargos de liderazgo ni niveles de dominio.
+
+## Idiomas y preferencias
+
+El selector de la cabecera alterna entre español e inglés sin cambiar de apartado ni cerrar las experiencias abiertas. `src/locales/ui.ts` contiene los textos de interfaz tipados. Los archivos de `src/data/` conservan el contenido español y `src/locales/en.ts` contiene las traducciones inglesas por identificador; se comparten nombres propios, enlaces, recursos y nombres de productos. Al añadir experiencia o formación, añade su traducción con el mismo `id`. Las pruebas comprueban que todos los registros tienen traducción y conservan sus identificadores y enlaces.
+
+`useLocale` ofrece los textos y el contenido reactivos; `usePreferences` gestiona idioma y tema. El idioma inicial es español. El tema inicial sigue la preferencia del sistema, salvo que se haya elegido uno manualmente. Ambas opciones se guardan en `localStorage` (`cv-language` y `cv-theme`); si el navegador lo bloquea, los controles siguen funcionando durante la visita.
+
+El modo claro conserva la paleta original. El modo oscuro combina fondo negro, superficies azules y acentos violetas, y utiliza el selector `.app-dark` también en PrimeVue. La impresión siempre usa fondo claro y el idioma seleccionado. El idioma del documento, los textos accesibles y la descripción de la página también se actualizan.

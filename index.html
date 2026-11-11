@@ -1,6 +1,20 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <script>
+      // Apply the saved colour scheme before the app renders.
+      try {
+        const theme = localStorage.getItem("cv-theme");
+        const dark =
+          theme === "dark" ||
+          (theme !== "light" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("app-dark", dark);
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+      } catch {
+        /* The app can run without persistent storage. */
+      }
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta

@@ -214,3 +214,130 @@ for (const viewport of [
     await expect(footer).toBeHidden();
   });
 }
+
+test("English translations cover the CV and persist with the chosen theme", async ({
+  page,
+}) => {
+  await page.goto("/#experiencia");
+  const details = page.locator("#experiencia .entry-toggle").first();
+  await details.click();
+  await page.getByRole("combobox", { name: "Idioma" }).selectOption("en");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(
+    page.getByRole("heading", { name: "Professional experience" }),
+  ).toBeVisible();
+  await expect(
+    page.locator("#experiencia .entry-description").first(),
+  ).toContainText("distributed application");
+  await expect(details).toHaveAttribute("aria-expanded", "true");
+  await expect(details).toHaveAccessibleName(/Hide details/);
+  await expect(page.locator("#experiencia .competency-tag").first()).toHaveText(
+    "Teamwork",
+  );
+  await expect(page.locator(".entry-period").first()).toHaveText(
+    "Jul 2025 — Present",
+  );
+  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
+  await expect(page.locator("html")).toHaveClass(/app-dark/);
+  await expect(
+    page.getByRole("button", { name: "Dark mode", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.reload();
+  await expect(page.getByRole("combobox", { name: "Language" })).toHaveValue(
+    "en",
+  );
+  await expect(page.locator("html")).toHaveClass(/app-dark/);
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Education", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", {
+      name: "University Master’s Degree in Development and Operations (MUDEVOPS)",
+    }),
+  ).toBeVisible();
+  await expect(page.locator("#educacion")).toContainText(
+    "Grade: Notable (Very Good)",
+  );
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Certifications", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Scrum Certification", exact: true }),
+  ).toBeVisible();
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Technologies", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Data and real-time processing" }),
+  ).toBeVisible();
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Contact", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Let’s stay in touch." }),
+  ).toBeVisible();
+  await page.locator(".footer-return").click();
+  await expect(page.getByRole("button", { name: "Save PDF" })).toBeVisible();
+  await expect(page.locator(".hero-headline")).toHaveText(
+    "Technology that serves people and processes.",
+  );
+  await page.emulateMedia({ media: "print" });
+  expect(
+    await page
+      .locator("body")
+      .evaluate((el) => getComputedStyle(el).backgroundColor),
+  ).toBe("rgb(255, 255, 255)");
+  await expect(
+    page.locator("#experiencia .entry-description").first(),
+  ).toBeVisible();
+  await expect(page.locator(".site-header")).toBeHidden();
+  await page.emulateMedia({ media: "screen" });
+  await page.getByRole("combobox", { name: "Language" }).selectOption("es");
+  await page.getByRole("button", { name: "Modo oscuro", exact: true }).click();
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("lang", "es");
+  await expect(page.locator("html")).not.toHaveClass(/app-dark/);
+});
+
+test("preferences work on mobile without storage and honour the initial system theme", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.addInitScript(() => {
+    Storage.prototype.getItem = () => {
+      throw new Error("Storage blocked");
+    };
+    Storage.prototype.setItem = () => {
+      throw new Error("Storage blocked");
+    };
+  });
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/#experiencia");
+  await expect(page.locator("html")).toHaveClass(/app-dark/);
+  await page.getByRole("combobox", { name: "Idioma" }).selectOption("en");
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Education", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Education", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByRole("navigation")).toBeHidden();
+  await page.getByRole("button", { name: "Dark mode", exact: true }).click();
+  await expect(page.locator("html")).not.toHaveClass(/app-dark/);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  const footer = await page.locator(".site-footer").boundingBox();
+  expect(footer!.y + footer!.height).toBeLessThanOrEqual(812);
+  expect(errors).toEqual([]);
+});

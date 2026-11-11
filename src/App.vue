@@ -8,25 +8,34 @@ import ResumeSection from "./components/ResumeSection.vue";
 import EntryTimeline from "./components/EntryTimeline.vue";
 import SkillGroups from "./components/SkillGroups.vue";
 import CertificateGrid from "./components/CertificateGrid.vue";
-import { profile } from "./data/profile";
-import { experience } from "./data/experience";
-import { education } from "./data/education";
-import { skills } from "./data/skills";
-import { certificates } from "./data/certificates";
-const sections = [
-  { id: "inicio", label: "Presentación" },
-  { id: "experiencia", label: "Experiencia" },
-  { id: "habilidades", label: "Tecnologías" },
-  { id: "educacion", label: "Formación" },
-  { id: "certificados", label: "Certificados" },
-  { id: "contacto", label: "Contacto" },
-];
+import { computed, watchEffect } from "vue";
+import { useLocale } from "./composables/useLocale";
+const { ui, content } = useLocale();
+const profile = computed(() => content.value.profile);
+const experience = computed(() => content.value.experience);
+const education = computed(() => content.value.education);
+const skills = computed(() => content.value.skills);
+const certificates = computed(() => content.value.certificates);
+const sections = computed(() => [
+  { id: "inicio", label: ui.value.navIntro },
+  { id: "experiencia", label: ui.value.navExperience },
+  { id: "habilidades", label: ui.value.navSkills },
+  { id: "educacion", label: ui.value.navEducation },
+  { id: "certificados", label: ui.value.navCertificates },
+  { id: "contacto", label: ui.value.navContact },
+]);
+watchEffect(() => {
+  document.title = `${profile.value.name} · ${profile.value.role}`;
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute("content", ui.value.metaDescription);
+});
 const { activeSection } = useSectionNavigation(
-  sections.map((section) => section.id),
+  sections.value.map((section) => section.id),
 );
 </script>
 <template>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a
+  <a class="skip-link" href="#contenido">{{ ui.skip }}</a
   ><SiteHeader
     :name="profile.name"
     :sections="sections"
@@ -39,29 +48,29 @@ const { activeSection } = useSectionNavigation(
     <SectionPanel :active="activeSection === 'experiencia'">
       <ResumeSection
         id="experiencia"
-        title="Experiencia profesional"
-        eyebrow="01 / Trayectoria"
+        :title="ui.experienceTitle"
+        :eyebrow="ui.experienceEyebrow"
         ><EntryTimeline :entries="experience" collapsible
       /></ResumeSection>
     </SectionPanel>
     <SectionPanel :active="activeSection === 'habilidades'">
       <ResumeSection
         id="habilidades"
-        title="Herramientas para construir"
-        eyebrow="02 / Tecnologías"
-        description="Tecnologías utilizadas en la experiencia y los proyectos del currículum."
+        :title="ui.skillsTitle"
+        :eyebrow="ui.skillsEyebrow"
+        :description="ui.skillsDescription"
         ><SkillGroups :groups="skills"
       /></ResumeSection>
       <aside class="project-callout">
         <div>
-          <p class="eyebrow">Del conocimiento a la práctica</p>
-          <h2>El código también cuenta mi historia.</h2>
-          <p>Explora mis repositorios y proyectos publicados.</p>
+          <p class="eyebrow">{{ ui.projectEyebrow }}</p>
+          <h2>{{ ui.projectTitle }}</h2>
+          <p>{{ ui.projectDescription }}</p>
         </div>
         <Button
           as="a"
           :href="profile.github"
-          label="Ver proyectos en GitHub"
+          :label="ui.projectLink"
           icon="pi pi-github"
           target="_blank"
           rel="noopener noreferrer"
@@ -71,28 +80,27 @@ const { activeSection } = useSectionNavigation(
     <SectionPanel :active="activeSection === 'educacion'">
       <ResumeSection
         id="educacion"
-        title="Formación académica"
-        eyebrow="03 / Aprendizaje"
+        :title="ui.educationTitle"
+        :eyebrow="ui.educationEyebrow"
         ><EntryTimeline :entries="education"
       /></ResumeSection>
     </SectionPanel>
     <SectionPanel :active="activeSection === 'certificados'">
       <ResumeSection
         id="certificados"
-        title="Certificaciones"
-        eyebrow="04 / Conocimientos acreditados"
+        :title="ui.certificatesTitle"
+        :eyebrow="ui.certificatesEyebrow"
         ><CertificateGrid :certificates="certificates"
       /></ResumeSection>
     </SectionPanel>
     <SectionPanel :active="activeSection === 'contacto'">
       <ResumeSection
         id="contacto"
-        title="Sigamos en contacto."
-        eyebrow="05 / Hablemos"
+        :title="ui.contactTitle"
+        :eyebrow="ui.contactEyebrow"
         ><div class="contact-layout">
           <p>
-            Para conversar sobre desarrollo, proyectos y oportunidades
-            profesionales.
+            {{ ui.contactDescription }}
           </p>
           <div>
             <a class="contact-email" :href="`mailto:${profile.email}`">{{
@@ -108,7 +116,7 @@ const { activeSection } = useSectionNavigation(
   </main>
   <footer class="site-footer">
     <span>© {{ new Date().getFullYear() }} {{ profile.name }}</span>
-    <div class="footer-social" role="group" aria-label="Redes sociales">
+    <div class="footer-social" role="group" :aria-label="ui.social">
       <a
         :href="profile.github"
         aria-label="GitHub"
@@ -126,6 +134,6 @@ const { activeSection } = useSectionNavigation(
         ><i class="pi pi-linkedin" aria-hidden="true"></i
       ></a>
     </div>
-    <a class="footer-return" href="#inicio">Volver a presentación</a>
+    <a class="footer-return" href="#inicio">{{ ui.returnIntro }}</a>
   </footer>
 </template>
