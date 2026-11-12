@@ -119,7 +119,7 @@ export const enContent = {
     ...profile,
     headline: "Technology that serves people and processes.",
     summary:
-      "Backend / Full Stack developer with experience in Java, Spring and Vue. I currently work at Capgemini Engineering on industrial automation with microservices and real-time data processing. My background combines educational applications, business rules with IBM ODM, and IT support and implementation.",
+      "I am a Backend / Full Stack Developer with over ten years of IT experience and strong skills in Java, Spring Boot and Vue. My strengths include analytical thinking, problem solving and adaptability. I bring initiative, a collaborative approach and a practical perspective that connects technology with people’s needs and business goals. I hold a University Master’s Degree in DevOps and am currently studying AI Engineering.",
   },
   experience: experience.map((entry) => ({
     ...entry,

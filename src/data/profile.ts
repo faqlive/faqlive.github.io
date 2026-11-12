@@ -3,7 +3,7 @@ export const profile = {
   role: "Backend / Full Stack Java Developer",
   headline: "Tecnología al servicio de las personas y los procesos.",
   summary:
-    "Desarrollador Backend / Full Stack con experiencia en Java, Spring y Vue. Actualmente trabajo en Capgemini Engineering en automatización industrial con microservicios y procesamiento de datos en tiempo real. Mi trayectoria combina aplicaciones para el sector educativo, reglas de negocio con IBM ODM y soporte e implementación IT.",
+    "Soy desarrollador Backend / Full Stack con más de diez años de experiencia en IT y conocimientos sólidos en Java, Spring Boot y Vue. Destaco por mi capacidad de análisis, resolución de problemas y adaptación al cambio. Aporto iniciativa, trabajo en equipo y una visión práctica que conecta la tecnología con las necesidades de las personas y del negocio. Cuento con un Máster Universitario en DevOps y actualmente me estoy formando como AI Engineer.",
   email: "facundojlopez@gmail.com",
   phone: "+34690959937",
   phoneLabel: "+34 690 959 937",
