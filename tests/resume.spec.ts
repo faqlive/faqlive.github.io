@@ -264,7 +264,7 @@ test("English translations cover the CV and persist with the chosen theme", asyn
     .getByRole("link", { name: "Certifications", exact: true })
     .click();
   await expect(
-    page.getByRole("heading", { name: "Scrum Certification", exact: true }),
+    page.getByRole("heading", { name: "Scrum Manager Course", exact: true }),
   ).toBeVisible();
   await page
     .getByRole("navigation")
@@ -346,14 +346,12 @@ test("Oracle certificate displays its issue date in both languages and opens the
   page,
 }) => {
   await page.goto("/#certificados");
-  const card = page
-    .locator(".certificate-card")
-    .filter({
-      has: page.getByRole("heading", {
-        name: "Oracle Certified Associate, Java SE 8 Programmer",
-        exact: true,
-      }),
-    });
+  const card = page.locator(".certificate-card").filter({
+    has: page.getByRole("heading", {
+      name: "Oracle Certified Associate, Java SE 8 Programmer",
+      exact: true,
+    }),
+  });
   await expect(card.locator("time")).toHaveAttribute("datetime", "2020-02-27");
   await expect(card.locator("time")).toHaveText("27 de febrero de 2020");
   await expect(card).toContainText("273462111OCAJSE8");

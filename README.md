@@ -86,7 +86,7 @@ La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. 
 
 Experiencia y educación se han actualizado con el texto del perfil de LinkedIn facilitado por su titular en esta conversación. Las fechas se expresan como periodos, sin duraciones calculadas. El apartado profesional contiene los seis puestos del perfil y el académico sus cuatro estudios; los proyectos propios del CV anterior no se presentan como un empleo adicional.
 
-El certificado Oracle se ha actualizado con el PDF facilitado por su titular: denominación oficial, expedición el 27 de febrero de 2020 e identificador. La imagen es una vista fiel del documento y el PDF se conserva en `public/certificates/`. La certificación Scrum conserva los datos anteriores. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico de 2021 sigue disponible en `public/CV-FJL-092021.pdf`; el botón de impresión genera un documento con el contenido actual.
+El certificado Oracle se ha actualizado con el PDF facilitado por su titular: denominación oficial, expedición el 27 de febrero de 2020 e identificador. La imagen es una vista fiel del documento y el PDF se conserva en `public/certificates/`. Los datos del Curso Scrum Manager se han contrastado con la certificación académica de CICE facilitada por su titular: expedición el 24 de febrero de 2020, número 138/2020. Se conserva el logo existente; la fotografía no se publica por decisión del titular. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico de 2021 sigue disponible en `public/CV-FJL-092021.pdf`; el botón de impresión genera un documento con el contenido actual.
 
 ## Navegación por apartados y estilo
 
