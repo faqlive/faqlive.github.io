@@ -41,6 +41,9 @@ export const esUi = {
   hideDetails: "Ocultar detalles",
   badge: "Distintivo de",
   credential: "Ver credencial",
+  issuedOn: "Fecha de expedición",
+  credentialId: "Identificador",
+  certificateDocument: "Ver certificado (PDF)",
   metaDescription:
     "Currículum de Facundo J. López. Desarrollo backend y full stack con Java, Spring y Vue; microservicios, automatización industrial y DevOps.",
 };
@@ -88,6 +91,9 @@ export const enUi: UiMessages = {
   hideDetails: "Hide details",
   badge: "Badge for",
   credential: "View credential",
+  issuedOn: "Issued on",
+  credentialId: "Credential ID",
+  certificateDocument: "View certificate (PDF)",
   metaDescription:
     "Facundo J. López’s CV. Backend and full stack development with Java, Spring and Vue; microservices, industrial automation and DevOps.",
 };

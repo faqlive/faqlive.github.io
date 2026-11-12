@@ -1012,3 +1012,26 @@ nav {
     color: #243b39;
   }
 }
+
+.certificate-image--document {
+  height: auto;
+}
+.certificate-image--document img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  border-radius: 6px;
+}
+.certificate-meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  margin: 12px 0;
+}
+@media print {
+  .certificate-image--document {
+    max-width: 220px;
+  }
+}

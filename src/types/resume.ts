@@ -16,6 +16,9 @@ export interface Certificate {
   issuer?: string;
   image?: string;
   credentialUrl?: string;
+  issuedOn?: string;
+  credentialId?: string;
+  documentUrl?: string;
 }
 export interface SkillGroup {
   name: string;
