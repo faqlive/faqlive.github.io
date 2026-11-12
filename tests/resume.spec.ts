@@ -341,3 +341,31 @@ test("preferences work on mobile without storage and honour the initial system t
   expect(footer!.y + footer!.height).toBeLessThanOrEqual(812);
   expect(errors).toEqual([]);
 });
+
+test("Oracle certificate displays its issue date in both languages and opens the original PDF", async ({
+  page,
+}) => {
+  await page.goto("/#certificados");
+  const card = page
+    .locator(".certificate-card")
+    .filter({
+      has: page.getByRole("heading", {
+        name: "Oracle Certified Associate, Java SE 8 Programmer",
+        exact: true,
+      }),
+    });
+  await expect(card.locator("time")).toHaveAttribute("datetime", "2020-02-27");
+  await expect(card.locator("time")).toHaveText("27 de febrero de 2020");
+  await expect(card).toContainText("273462111OCAJSE8");
+  await expect(card.locator("img")).toBeVisible();
+  const link = card.getByRole("link", { name: "Ver certificado (PDF)" });
+  const href = await link.getAttribute("href");
+  const response = await page.request.get(href!);
+  expect(response.ok()).toBe(true);
+  expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  await page.getByRole("combobox", { name: "Idioma" }).selectOption("en");
+  await expect(card.locator("time")).toHaveText("February 27, 2020");
+  await expect(
+    card.getByRole("link", { name: "View certificate (PDF)" }),
+  ).toHaveAttribute("href", href!);
+});

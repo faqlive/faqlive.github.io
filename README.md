@@ -86,7 +86,7 @@ La configuración `base: '/'` corresponde al dominio raíz `faqlive.github.io`. 
 
 Experiencia y educación se han actualizado con el texto del perfil de LinkedIn facilitado por su titular en esta conversación. Las fechas se expresan como periodos, sin duraciones calculadas. El apartado profesional contiene los seis puestos del perfil y el académico sus cuatro estudios; los proyectos propios del CV anterior no se presentan como un empleo adicional.
 
-Las certificaciones conservan los datos anteriores y no forman parte de esta actualización. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico de 2021 sigue disponible en `public/CV-FJL-092021.pdf`; el botón de impresión genera un documento con el contenido actual.
+El certificado Oracle se ha actualizado con el PDF facilitado por su titular: denominación oficial, expedición el 27 de febrero de 2020 e identificador. La imagen es una vista fiel del documento y el PDF se conserva en `public/certificates/`. La certificación Scrum conserva los datos anteriores. Los teléfonos de referencias personales se han retirado de la web pública. El PDF histórico de 2021 sigue disponible en `public/CV-FJL-092021.pdf`; el botón de impresión genera un documento con el contenido actual.
 
 ## Navegación por apartados y estilo
 
@@ -107,3 +107,5 @@ El selector de la cabecera alterna entre español e inglés sin cambiar de apart
 `useLocale` ofrece los textos y el contenido reactivos; `usePreferences` gestiona idioma y tema. El idioma inicial es español. El tema inicial sigue la preferencia del sistema, salvo que se haya elegido uno manualmente. Ambas opciones se guardan en `localStorage` (`cv-language` y `cv-theme`); si el navegador lo bloquea, los controles siguen funcionando durante la visita.
 
 El modo claro conserva la paleta original. El modo oscuro combina fondo negro, superficies azules y acentos violetas, y utiliza el selector `.app-dark` también en PrimeVue. La impresión siempre usa fondo claro y el idioma seleccionado. El idioma del documento, los textos accesibles y la descripción de la página también se actualizan.
+
+Los certificados admiten los campos opcionales `issuedOn` (fecha ISO `YYYY-MM-DD`), `credentialId` y `documentUrl` (PDF en `public/`). Las fechas y etiquetas se muestran en el idioma seleccionado; el nombre oficial de Oracle se conserva en inglés.
