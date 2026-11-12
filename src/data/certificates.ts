@@ -9,5 +9,12 @@ export const certificates: Certificate[] = [
     credentialId: "273462111OCAJSE8",
     documentUrl: "/certificates/oracle-java-se8.pdf",
   },
-  { id: "scrum", name: "Certificación Scrum", image: "/img/scrumCert.png" },
+  {
+    id: "scrum",
+    name: "Curso Scrum Manager",
+    issuer: "CICE · Centro Oficial Scrum Manager",
+    image: "/img/scrumCert.png",
+    issuedOn: "2020-02-24",
+    credentialId: "138/2020",
+  },
 ];

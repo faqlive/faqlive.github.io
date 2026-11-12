@@ -131,7 +131,7 @@ export const enContent = {
   })),
   certificates: certificates.map((entry) => ({
     ...entry,
-    name: entry.id === "scrum" ? "Scrum Certification" : entry.name,
+    name: entry.id === "scrum" ? "Scrum Manager Course" : entry.name,
   })),
   skills: skills.map((group, index) => ({
     ...group,
