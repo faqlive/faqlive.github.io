@@ -12,11 +12,12 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     title: "Backend Java Developer",
     location: "Remote · Full-time",
     description:
-      "Backend development for a distributed application that automates industrial processes and coordinates AGVs and automated manufacturing cells.",
+      "I contribute to the development of a distributed application for industrial automation, coordinating automated guided vehicles (AGVs) and manufacturing cells.",
     highlights: [
-      "Design and implementation of microservices with Spring Boot, Kafka, Redis and Flink; real-time data processing, transformation and enrichment to support the platform’s decision logic.",
-      "Optimised backend connections and redesigned database queries, improving performance, load times and reliability.",
-      "Contributed to test-environment deployments with Kubernetes and Azure DevOps, and to AI-assisted development demos to improve team productivity.",
+      "Develop microservices with Spring Boot and real-time data processing with Kafka, Flink and Redis to support the platform’s decision logic.",
+      "Optimise backend connections and redesign database queries to improve application performance, load times and reliability.",
+      "Collaborate on test-environment deployments with Kubernetes and Azure DevOps.",
+      "Contribute to AI-assisted development demos to explore improvements in team productivity.",
     ],
     competencies: ["Teamwork", "Problem solving", "Process improvement"],
   },
@@ -25,11 +26,11 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     title: "Java Full Stack Developer",
     location: "Madrid, Spain · Hybrid · Full-time",
     description:
-      "Design and development of LTI applications integrated with Moodle and Canvas for teachers, administrators and students.",
+      "Development and evolution of educational applications integrated with Moodle and Canvas through LTI, used by teachers, administrators and students.",
     highlights: [
-      "Backend development with Spring and frontend development with Vue, alongside maintenance of legacy Wicket applications.",
-      "Implemented Spring Security and JWT and moved applications to a stateless model to support independent sessions across multiple windows.",
-      "Migrated Java 8 to Java 17 and Vue 2 to Vue 3; proposed and implemented Vite and Pinia to improve development workflows and state management.",
+      "Developed backend features with Spring and frontend features with Vue, and maintained legacy Wicket applications.",
+      "Strengthened security with Spring Security and JWT and adapted applications to a stateless model to support independent sessions across multiple windows.",
+      "Modernised the stack by migrating Java 8 to Java 17 and Vue 2 to Vue 3. Proposed and introduced Vite and Pinia to improve development workflows and state management.",
       "Developed TeamCity pipelines and an Ansible playbook for Moodle environment upgrades, reducing deployment times and improving operational efficiency.",
     ],
     competencies: ["Initiative", "Adaptability", "Process improvement"],
@@ -38,9 +39,11 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     period: "Jul 2020 — Jan 2022",
     title: "Junior Java Developer",
     location: "Madrid, Spain · Full-time",
+    description:
+      "Development of business rule solutions with IBM Operational Decision Manager (ODM) for the financial and logistics sectors.",
     highlights: [
-      "Modelled and developed business rules with IBM Operational Decision Manager (ODM) for the financial and logistics sectors.",
-      "Created test plans for operations that group business rules.",
+      "Modelled and developed business rules and the operations that group them within IBM ODM.",
+      "Prepared test plans to validate the behaviour of operations and their business rules.",
     ],
     competencies: [
       "Analytical thinking",
@@ -53,11 +56,13 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     period: "Nov 2014 — Jul 2019",
     title: "Helpdesk",
     location: "Madrid metropolitan area",
+    description:
+      "Technical support and administration of platforms with over 1,600 workstations, combining user support with systems, telephony and application management.",
     highlights: [
-      "Supported platforms with over 1,600 workstations and administered Active Directory and G Suite.",
-      "Administered Avaya and Asterisk telephony: extensions, users, vectors, VDNs, recordings and skill groups.",
-      "Managed CRM/CTI systems with Altitude, InConcert, Presence and Luxor Cairo, and pull printing with HP and Epson.",
-      "Configured and repaired computer equipment.",
+      "Administered Active Directory and G Suite to support users’ working environments.",
+      "Managed Avaya and Asterisk telephony, configuring extensions, users, vectors, VDNs, recordings and skill groups.",
+      "Administered CRM/CTI platforms including Altitude, InConcert, Presence and Luxor Cairo, along with HP and Epson pull-printing systems.",
+      "Configured and repaired computer equipment as part of incident resolution and day-to-day support.",
     ],
     competencies: [
       "User support",
@@ -69,9 +74,11 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     period: "Sep 2010 — Feb 2013",
     title: "Co-founder",
     location: "Rosario, Argentina",
+    description:
+      "As a co-founder, combined the commercial management of the business with IT services and customer support.",
     highlights: [
-      "Managed purchasing, customer accounts, inventory and sales.",
-      "Provided IT support, website maintenance and IT training.",
+      "Managed purchasing, inventory, customer accounts and sales, connecting commercial needs with day-to-day business operations.",
+      "Provided technical support, website maintenance and IT training for users.",
     ],
     competencies: [
       "Purchasing management",
@@ -85,8 +92,10 @@ export const englishExperience: Record<string, Partial<TimelineEntry>> = {
     period: "Jul 2010 — Jul 2011",
     title: "Manufacturing Engineering Office",
     location: "Villa Gobernador Gálvez, Santa Fe, Argentina",
+    description:
+      "Support for the analysis and improvement of manufacturing processes in the finishing section.",
     highlights: [
-      "Performed time studies, designed fixtures and balanced the finishing section’s production line.",
+      "Performed time studies, designed fixtures and contributed to production-line balancing to improve work organisation.",
     ],
     competencies: [
       "Process analysis",
