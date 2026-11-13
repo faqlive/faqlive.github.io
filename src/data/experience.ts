@@ -12,11 +12,12 @@ export const experience: TimelineEntry[] = [
     organization: "Capgemini Engineering",
     location: "En remoto · Jornada completa",
     description:
-      "Desarrollo backend en una aplicación distribuida para automatizar procesos industriales y coordinar AGVs y células automáticas de manufactura.",
+      "Participo en el desarrollo de una aplicación distribuida para automatización industrial, orientada a coordinar vehículos de guiado automático (AGVs) y células de manufactura.",
     highlights: [
-      "Diseño e implementación de microservicios con Spring Boot, Kafka, Redis y Flink; procesamiento, transformación y enriquecimiento de datos en tiempo real para la lógica de decisión de la plataforma.",
-      "Optimización de conexiones backend y rediseño de consultas a base de datos, con mejoras en rendimiento, tiempos de carga y fiabilidad.",
-      "Colaboración en despliegues de entornos de prueba con Kubernetes y Azure DevOps, y en demos de asistencia al desarrollo con IA para mejorar la productividad del equipo.",
+      "Desarrollo microservicios con Spring Boot y procesamiento de datos en tiempo real con Kafka, Flink y Redis para alimentar la lógica de decisión de la plataforma.",
+      "Optimizo conexiones backend y rediseño consultas a base de datos para mejorar el rendimiento, los tiempos de carga y la fiabilidad de la aplicación.",
+      "Colaboro en el despliegue de entornos de prueba con Kubernetes y Azure DevOps.",
+      "Participo en demos de desarrollo asistido por IA para explorar mejoras en la productividad del equipo.",
     ],
     technologies: [
       "Java",
@@ -36,12 +37,12 @@ export const experience: TimelineEntry[] = [
     organization: "PROEDUCA",
     location: "Madrid, España · Híbrido · Jornada completa",
     description:
-      "Diseño y desarrollo de aplicaciones LTI integradas con Moodle y Canvas para profesores, gestores y estudiantes.",
+      "Desarrollo y evolución de aplicaciones educativas integradas mediante LTI con Moodle y Canvas, utilizadas por profesores, gestores y estudiantes.",
     highlights: [
-      "Desarrollo backend con Spring y frontend con Vue, junto con el mantenimiento de aplicaciones legacy en Wicket.",
-      "Implementación de Spring Security y JWT y evolución hacia un modelo stateless para soportar sesiones multiventana independientes.",
-      "Migraciones de Java 8 a Java 17 y de Vue 2 a Vue 3; propuesta e implementación de Vite y Pinia para mejorar el desarrollo y la gestión de estado.",
-      "Desarrollo de pipelines en TeamCity y de un playbook de Ansible para actualizar entornos Moodle, reduciendo tiempos de despliegue y mejorando la eficiencia operativa.",
+      "Desarrollé funcionalidades backend con Spring y frontend con Vue, y mantuve aplicaciones legacy en Wicket.",
+      "Reforcé la seguridad con Spring Security y JWT y adapté las aplicaciones a un modelo stateless para permitir sesiones independientes en varias ventanas.",
+      "Modernicé el stack mediante migraciones de Java 8 a Java 17 y de Vue 2 a Vue 3. Propuse e incorporé Vite y Pinia para mejorar el desarrollo y la gestión de estado.",
+      "Desarrollé pipelines en TeamCity y un playbook de Ansible para actualizar entornos Moodle, reduciendo tiempos de despliegue y mejorando la eficiencia operativa.",
     ],
     technologies: [
       "Java 17",
@@ -70,9 +71,11 @@ export const experience: TimelineEntry[] = [
     title: "Junior Java Developer",
     organization: "decide4AI",
     location: "Madrid, España · Jornada completa",
+    description:
+      "Desarrollo de soluciones basadas en reglas de negocio con IBM Operational Decision Manager (ODM) para los sectores financiero y logístico.",
     highlights: [
-      "Modelado y desarrollo de reglas de negocio con IBM Operational Decision Manager (ODM) para los sectores financiero y logístico.",
-      "Creación de planes de pruebas para las operaciones que agrupan las reglas de negocio.",
+      "Modelé y desarrollé las reglas y las operaciones que las agrupan dentro del entorno IBM ODM.",
+      "Preparé planes de pruebas para validar el comportamiento de las operaciones y sus reglas de negocio.",
     ],
     technologies: ["Java", "IBM ODM", "Modelado de datos", "SoapUI"],
   },
@@ -87,11 +90,13 @@ export const experience: TimelineEntry[] = [
     title: "Helpdesk",
     organization: "GSS (Global Sales Solutions)",
     location: "Madrid y alrededores",
+    description:
+      "Soporte técnico y administración de plataformas con más de 1.600 puestos, combinando atención a usuarios y gestión de sistemas, telefonía y aplicaciones.",
     highlights: [
-      "Atención a plataformas de más de 1.600 puestos y administración de Active Directory y G Suite.",
-      "Administración de telefonía Avaya y Asterisk: extensiones, usuarios, vectores, VDN, locuciones y grupos de habilidades.",
-      "Gestión de CRM/CTI con Altitude, InConcert, Presence y Luxor Cairo; impresión Pull Printing con HP y Epson.",
-      "Preparación y reparación de equipos informáticos.",
+      "Administré Active Directory y G Suite para dar soporte al entorno de trabajo de los usuarios.",
+      "Gestioné telefonía Avaya y Asterisk, configurando extensiones, usuarios, vectores, VDN, locuciones y grupos de habilidades.",
+      "Administré plataformas CRM/CTI como Altitude, InConcert, Presence y Luxor Cairo, además de sistemas de impresión Pull Printing de HP y Epson.",
+      "Preparé y reparé equipos informáticos como parte de la resolución de incidencias y el soporte diario.",
     ],
   },
   {
@@ -107,9 +112,11 @@ export const experience: TimelineEntry[] = [
     title: "Socio fundador",
     organization: "MentalRoots",
     location: "Rosario, Argentina",
+    description:
+      "Como socio fundador, combiné la gestión comercial del negocio con la prestación de servicios informáticos y la atención a clientes.",
     highlights: [
-      "Gestión de compras, cuentas de clientes, stock y ventas.",
-      "Soporte técnico informático, mantenimiento web y formación informática.",
+      "Gestioné compras, stock, cuentas de clientes y ventas, conectando las necesidades comerciales con la operativa del negocio.",
+      "Realicé tareas de soporte técnico, mantenimiento web y formación informática a usuarios.",
     ],
   },
   {
@@ -123,8 +130,10 @@ export const experience: TimelineEntry[] = [
     title: "Oficina de Ingeniería de Manufactura",
     organization: "Metal Sur",
     location: "Villa Gobernador Gálvez, Santa Fe, Argentina",
+    description:
+      "Apoyo al análisis y la mejora de los procesos de manufactura en la sección de terminación.",
     highlights: [
-      "Toma de tiempos, diseño de dispositivos y balance de línea de la sección de terminación.",
+      "Realicé estudios de tiempos, diseñé dispositivos y participé en el balance de línea para mejorar la organización del trabajo.",
     ],
   },
 ];
